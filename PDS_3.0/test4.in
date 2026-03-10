@@ -1,0 +1,41 @@
+CREATE demoA demoB 0
+OPEN demoA demoB 0
+
+STORE demoA 1 0 Alice 123-Main-St alice@x.com
+STORE demoA 2 0 Bob 456-Oak-Ave bob@x.com
+STORE demoB 101 0 HospB-1 AddrB-1 b1@x.com
+STORE demoB 102 0 HospB-2 AddrB-2 b2@x.com
+
+SEARCH demoA 1 0 Alice 123-Main-St alice@x.com
+SEARCH demoA 2 0 Bob 456-Oak-Ave bob@x.com
+SEARCH demoB 101 0 HospB-1 AddrB-1 b1@x.com
+SEARCH demoA 999 1
+
+UPDATE demoA 1 0 Alice-Updated 123-Main-St alice@x.com
+SEARCH demoA 1 0 Alice-Updated 123-Main-St alice@x.com
+
+REL_CREATE myrel demoA demoB 0
+REL_OPEN myrel 0
+REL_STORE 1 101 0
+REL_STORE 2 102 0
+REL_STORE 999 101 1
+REL_SEARCH 1 0 101 HospB-1 AddrB-1 b1@x.com
+REL_SEARCH 2 0 102 HospB-2 AddrB-2 b2@x.com
+REL_SEARCH 999 1
+
+DELETE demoA 1 0
+SEARCH demoA 1 1
+REL_SEARCH 1 1
+
+DELETE demoA 999 1
+
+UNDELETE demoA 1 0
+SEARCH demoA 1 0 Alice-Updated 123-Main-St alice@x.com
+REL_SEARCH 1 1
+
+DELETE demoA 2 0
+DELETE demoA 2 1
+
+REL_CLOSE 0
+CLOSE 0
+

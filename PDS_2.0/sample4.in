@@ -1,0 +1,6 @@
+CREATE demoA demoB 0
+CREATE demoC demoD 0
+OPEN demoA demoB 0
+OPEN demoC demoD 1
+STORE demoC 301 1 Name Addr Email
+CLOSE 0

@@ -1,0 +1,12 @@
+CREATE TableC TableD 0
+OPEN TableC TableD 0
+REL_CREATE Rel_CD TableC TableD 0
+CLOSE 0
+CREATE TableA TableB 0
+OPEN TableA TableB 0
+REL_OPEN Rel_CD 1
+CLOSE 0
+OPEN TableC TableD 0
+REL_OPEN Rel_CD 0
+CLOSE 0
+

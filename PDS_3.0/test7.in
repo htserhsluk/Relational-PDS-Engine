@@ -1,0 +1,32 @@
+CREATE Docs Patients 0
+OPEN Docs Patients 0
+REL_CREATE DocPat Docs Patients 0
+REL_OPEN DocPat 0
+STORE Docs 1 0 Dr.Smith 123_Main smith@hosp.com
+STORE Docs 2 0 Dr.Jones 456_Elm jones@hosp.com
+STORE Patients 100 0 Alice 789_Pine alice@mail.com
+STORE Patients 200 0 Bob 321_Oak bob@mail.com
+REL_STORE 1 999 1
+REL_STORE 999 100 1
+REL_STORE 1 100 0
+UPDATE Docs 1 0 Dr.Smith_PhD 123_Main new@hosp.com
+SEARCH Docs 1 0 Dr.Smith_PhD 123_Main new@hosp.com
+REL_SEARCH 1 0 100 Alice 789_Pine alice@mail.com
+DELETE Docs 1 0
+SEARCH Docs 1 1
+REL_SEARCH 1 1
+REL_STORE 1 200 1
+UPDATE Docs 1 1 Dr.Smith_Fake 000_Fake fake@x.com
+DELETE Docs 1 1
+UNDELETE Docs 1 0
+SEARCH Docs 1 0 Dr.Smith_PhD 123_Main new@hosp.com
+REL_SEARCH 1 1
+REL_UNDELETE 1 Docs 0
+REL_SEARCH 1 0 100 Alice 789_Pine alice@mail.com
+REL_DELETE 100 Patients 0
+REL_SEARCH 1 1
+REL_UNDELETE 100 Patients 0
+REL_SEARCH 1 0 100 Alice 789_Pine alice@mail.com
+REL_CLOSE 0
+CLOSE 0
+

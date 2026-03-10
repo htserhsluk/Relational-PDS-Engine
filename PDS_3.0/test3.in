@@ -1,0 +1,11 @@
+CREATE tA tB 0
+OPEN tA tB 0
+STORE tA 50 0 Target Addr t@t.com
+UNDELETE tA 0 1
+SEARCH tA 50 0 Target Addr t@t.com
+CLOSE 0
+CREATE tC tD 0
+OPEN tC fakeTable 1
+OPEN tC tD 0
+CLOSE 0
+

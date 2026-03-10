@@ -1,0 +1,21 @@
+CREATE demoA demoB 0
+OPEN demoA demoB 0
+STORE demoA 10000 0 Name-of-10000 Address-of-10000 Email-of-10000
+STORE demoB 20000 0 Name-of-20000 Address-of-20000 Email-of-20000
+STORE demoA 10001 0 Name-of-10001 Address-of-10001 Email-of-10001
+SEARCH demoA 10000 0 Name-of-10000 Address-of-10000 Email-of-10000
+SEARCH demoB 20000 0 Name-of-20000 Address-of-20000 Email-of-20000
+SEARCH demoA 90000 1
+UPDATE demoA 10001 0 Updated-Name-10001 Updated-Address-10001 Updated-Email-10001
+SEARCH demoA 10001 0 Updated-Name-10001 Updated-Address-10001 Updated-Email-10001
+CLOSE 0
+OPEN demoA demoB 0
+STORE demoB 20001 0 Name-of-20001 Address-of-20001 Email-of-20001
+DELETE demoA 10000 0
+CLOSE 0
+OPEN demoA demoB 0
+SEARCH demoA 10000 1
+DELETE demoB 99999 1
+SEARCH demoB 20001 0 Name-of-20001 Address-of-20001 Email-of-20001
+SEARCH demoA 10001 0 Updated-Name-10001 Updated-Address-10001 Updated-Email-10001
+CLOSE 0

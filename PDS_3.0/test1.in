@@ -1,0 +1,31 @@
+CREATE Hosp Branch 0
+OPEN Hosp Branch 0
+OPEN Hosp Branch 1
+STORE Hosp 1 0 City_Hospital Bangalore contact@cityhosp.com
+STORE Hosp 2 0 Apollo_Hospital Mumbai contact@apollo.com
+STORE Hosp 3 0 Fortis_Hospital Delhi contact@fortis.com
+STORE Branch 101 0 North_Wing Block_A north@cityhosp.com
+STORE Branch 102 0 South_Wing Block_B south@cityhosp.com
+STORE Branch 201 0 East_Wing Block_C east@apollo.com
+REL_CREATE Hosp_Branch Hosp Branch 0
+REL_OPEN Hosp_Branch 0
+REL_STORE 99 101 1
+REL_STORE 1 999 1
+REL_STORE 1 101 0
+REL_STORE 3 102 0
+REL_STORE 2 201 0
+REL_SEARCH 1 0 101 North_Wing Block_A north@cityhosp.com
+REL_SEARCH 3 0 102 South_Wing Block_B south@cityhosp.com
+REL_SEARCH 2 0 201 East_Wing Block_C east@apollo.com
+DELETE Hosp 1 0
+SEARCH Hosp 1 1
+REL_SEARCH 1 1
+UNDELETE Hosp 1 0
+SEARCH Hosp 1 0 City_Hospital Bangalore contact@cityhosp.com
+REL_SEARCH 1 1
+REL_UNDELETE 1 Hosp 0
+REL_SEARCH 1 0 101 North_Wing Block_A north@cityhosp.com
+REL_DELETE 102 Branch 0
+REL_CLOSE 0
+CLOSE 0
+

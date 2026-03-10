@@ -1,0 +1,18 @@
+CLOSE 1
+REL_CLOSE 1
+CREATE Docs Patients 0
+REL_CREATE DocPat Docs Patients 0
+REL_OPEN DocPat 1
+OPEN Docs Patients 0
+OPEN Docs Patients 1
+REL_OPEN DocPat 0
+REL_OPEN DocPat 1
+CREATE FakeA FakeB 0
+REL_CREATE FakeRel FakeA FakeB 0
+REL_OPEN FakeRel 1
+REL_CLOSE 0
+CLOSE 0
+OPEN Docs GhostTable 1
+OPEN Docs Patients 0
+CLOSE 0
+

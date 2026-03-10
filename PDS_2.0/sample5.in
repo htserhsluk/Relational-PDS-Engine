@@ -1,0 +1,8 @@
+CREATE demoA demoB 0
+OPEN demoA demoB 0
+STORE demoA 500 0 Original-Name Original-Addr Original-Email
+DELETE demoA 500 0
+SEARCH demoA 500 1
+UNDELETE demoA 500 0
+SEARCH demoA 500 0 Original-Name Original-Addr Original-Email
+CLOSE 0
