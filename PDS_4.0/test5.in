@@ -1,0 +1,20 @@
+CREATE persdb 2 hospitals 356 branches 356 0
+OPEN persdb 0
+STORE hospitals 1 0 City_Hospital Bangalore city@h.com
+STORE hospitals 2 0 Apollo Mumbai apollo@h.com
+STORE branches 101 0 North_Wing Block_A north@h.com
+UPDATE hospitals 1 0 City_Hospital_V2 Bangalore_New city2@h.com
+DELETE hospitals 2 0
+REL_CREATE hosp_branch hospitals branches 0
+REL_OPEN hosp_branch 0
+REL_STORE hosp_branch 1 101 0
+REL_CLOSE hosp_branch 0
+CLOSE 0
+OPEN persdb 0
+SEARCH hospitals 1 0 City_Hospital_V2 Bangalore_New city2@h.com
+SEARCH hospitals 2 1
+SEARCH branches 101 0 North_Wing Block_A north@h.com
+REL_OPEN hosp_branch 0
+REL_SEARCH hosp_branch 1 0 101 North_Wing Block_A north@h.com
+REL_CLOSE hosp_branch 0
+CLOSE 0

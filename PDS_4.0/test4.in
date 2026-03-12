@@ -1,0 +1,30 @@
+CREATE hospdb 3 hospitals 356 branches 356 doctors 356 0
+OPEN hospdb 0
+STORE hospitals 1 0 City_Hospital Bangalore city@h.com
+STORE hospitals 2 0 Apollo Mumbai apollo@h.com
+STORE branches 101 0 North_Wing Block_A north@h.com
+STORE branches 102 0 South_Wing Block_B south@h.com
+STORE doctors 201 0 Dr.Smith Cardiology smith@h.com
+STORE doctors 202 0 Dr.Jones Neurology jones@h.com
+REL_CREATE hosp_branch hospitals branches 0
+REL_CREATE hosp_doctor hospitals doctors 0
+REL_OPEN hosp_branch 0
+REL_OPEN hosp_doctor 0
+REL_STORE hosp_branch 1 101 0
+REL_STORE hosp_branch 2 102 0
+REL_STORE hosp_doctor 1 201 0
+REL_STORE hosp_doctor 2 202 0
+REL_SEARCH hosp_branch 1 0 101 North_Wing Block_A north@h.com
+REL_SEARCH hosp_doctor 1 0 201 Dr.Smith Cardiology smith@h.com
+DELETE hospitals 1 0
+REL_SEARCH hosp_branch 1 1
+REL_SEARCH hosp_doctor 1 1
+UNDELETE hospitals 1 0
+REL_SEARCH hosp_branch 1 1
+REL_UNDELETE hosp_branch 1 pri 0
+REL_SEARCH hosp_branch 1 0 101 North_Wing Block_A north@h.com
+REL_UNDELETE hosp_doctor 1 pri 0
+REL_SEARCH hosp_doctor 1 0 201 Dr.Smith Cardiology smith@h.com
+REL_CLOSE hosp_branch 0
+REL_CLOSE hosp_doctor 0
+CLOSE 0

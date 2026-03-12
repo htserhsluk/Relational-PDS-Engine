@@ -1,0 +1,24 @@
+CREATE university 3 hospitals 356 branches 356 doctors 356 0
+OPEN university 0
+OPEN university 1
+STORE hospitals 1 0 City_Hospital Bangalore city@h.com
+STORE hospitals 2 0 Apollo Mumbai apollo@h.com
+STORE hospitals 3 0 Fortis Delhi fortis@h.com
+STORE branches 101 0 North_Wing Block_A north@h.com
+STORE branches 102 0 South_Wing Block_B south@h.com
+STORE doctors 201 0 Dr.Smith Cardiology smith@h.com
+STORE doctors 202 0 Dr.Jones Neurology jones@h.com
+SEARCH hospitals 1 0 City_Hospital Bangalore city@h.com
+SEARCH hospitals 2 0 Apollo Mumbai apollo@h.com
+SEARCH hospitals 999 1
+SEARCH branches 101 0 North_Wing Block_A north@h.com
+UPDATE hospitals 2 0 Apollo_Updated Mumbai apollo2@h.com
+SEARCH hospitals 2 0 Apollo_Updated Mumbai apollo2@h.com
+UPDATE hospitals 999 1 Ghost Nowhere ghost@h.com
+DELETE hospitals 3 0
+SEARCH hospitals 3 1
+DELETE hospitals 3 1
+UNDELETE hospitals 3 0
+SEARCH hospitals 3 0 Fortis Delhi fortis@h.com
+CLOSE 0
+CLOSE 1

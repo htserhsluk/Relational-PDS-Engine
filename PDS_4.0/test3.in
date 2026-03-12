@@ -1,0 +1,16 @@
+CREATE fielddb 2 patients 356 doctors 356 0
+OPEN fielddb 0
+STORE patients 1 0 Alice_Smith 10_Main_St alice@mail.com
+STORE patients 2 0 Bob_Jones 20_Oak_Ave bob@mail.com
+STORE patients 3 0 Alice_Smith 30_Elm_Rd alice2@mail.com
+STORE doctors 101 0 Dr.House Diagnostics house@h.com
+STORE doctors 102 0 Dr.Wilson Oncology wilson@h.com
+SEARCH_FIELD patients name Bob_Jones 0 2 Bob_Jones 20_Oak_Ave bob@mail.com
+SEARCH_FIELD patients email alice@mail.com 0 1 Alice_Smith 10_Main_St alice@mail.com
+SEARCH_FIELD patients name Nobody 1
+SEARCH_FIELD doctors name Dr.House 0 101 Dr.House Diagnostics house@h.com
+DELETE patients 1 0
+SEARCH_FIELD patients email alice@mail.com 1
+UNDELETE patients 1 0
+SEARCH_FIELD patients email alice@mail.com 0 1 Alice_Smith 10_Main_St alice@mail.com
+CLOSE 0

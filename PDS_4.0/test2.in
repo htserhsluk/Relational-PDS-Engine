@@ -1,0 +1,27 @@
+CREATE mydb 2 tableA 356 tableB 356 0
+OPEN mydb 0
+STORE tableA 10 0 Alice Addr_A alice@a.com
+STORE tableA 20 0 Bob Addr_B bob@b.com
+STORE tableB 100 0 ItemX Loc_X x@x.com
+STORE tableB 200 0 ItemY Loc_Y y@y.com
+REL_CREATE A_to_B tableA tableB 0
+REL_OPEN A_to_B 0
+REL_OPEN A_to_B 1
+REL_STORE A_to_B 10 100 0
+REL_STORE A_to_B 20 200 0
+REL_STORE A_to_B 999 100 1
+REL_STORE A_to_B 10 999 1
+REL_SEARCH A_to_B 10 0 100 ItemX Loc_X x@x.com
+REL_SEARCH A_to_B 20 0 200 ItemY Loc_Y y@y.com
+REL_SEARCH A_to_B 999 1
+REL_DELETE A_to_B 10 pri 0
+REL_SEARCH A_to_B 10 1
+REL_UNDELETE A_to_B 10 pri 0
+REL_SEARCH A_to_B 10 0 100 ItemX Loc_X x@x.com
+REL_DELETE A_to_B 100 rel 0
+REL_SEARCH A_to_B 10 1
+REL_UNDELETE A_to_B 100 rel 0
+REL_SEARCH A_to_B 10 0 100 ItemX Loc_X x@x.com
+REL_CLOSE A_to_B 0
+REL_CLOSE A_to_B 1
+CLOSE 0
